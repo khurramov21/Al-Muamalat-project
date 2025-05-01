@@ -1,13 +1,10 @@
-import Navbar from './Components/Navbar.jsx'
-import Home from './Pages/Home.jsx'
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './Routes/Route';
 
 function App() {
-  return (
-    <>
-     <Navbar />
-     <Home/>
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
+

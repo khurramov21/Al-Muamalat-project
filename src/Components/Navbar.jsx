@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../img/navbar-logo.png'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -11,10 +12,10 @@ const Navbar = () => {
 
         <div className="navbar-menu w-[491px] h-[64px] mt-5">
             <ul className='flex gap-12 font-sans font-semibold text-[15px] leading-[100%] tracking-[0%] align-center cursor-pointer'>
-                <li className='text-[#009688]'>Home</li>
-                <li>Programs</li>
-                <li>Financy tools</li>
-                <li>Contact</li>
+                <li className='text-[#009688]'><Link to="/home">Home</Link></li>
+                <li><Link to="/programs">Programs</Link></li>
+                <li><Link to="/financy-tools">Financy tools</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
         </div>
 
