@@ -6,6 +6,8 @@ import { MdOutlineCalendarMonth } from "react-icons/md";
 import our1 from '../img/our1.png';
 import our4 from '../img/our4.png';
 import man from '../img/man.png';
+import OurSwiper from '../Components/OurSwiper';
+import OurMedia from '../Components/OurMedia';
 
 // Slider
 import Slider from "react-slick";
@@ -15,7 +17,6 @@ import { SlSocialFacebook } from 'react-icons/sl';
 import { CiTwitter } from 'react-icons/ci';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 
 const teamMembers = [
     {
@@ -199,7 +200,7 @@ const Home = () => {
                 <div className='w-full text-center mb-[40px]'>
                     <h2 className='font-semibold text-[40px] text-[#000000]'>Our Expert Team</h2>
                     <p className='font-semibold text-[17px] text-[#686868] w-[60%] mx-auto'>
-                    Our team consists of seasoned professionals with extensive experience in Islamic finance and management. Each member brings a unique set of skills and expertise.
+                        Our team consists of seasoned professionals with extensive experience in Islamic finance and management. Each member brings a unique set of skills and expertise.
                     </p>
                 </div>
 
@@ -217,10 +218,19 @@ const Home = () => {
                                             {member.description}
                                         </p>
                                         <div className='flex w-[198px] h-[24px] justify-between cursor-pointer text-[20px]'>
-                                            <LiaTelegramPlane />
-                                            <FaInstagram />
-                                            <SlSocialFacebook />
-                                            <CiTwitter />
+                                            <a href="https://www.telegram.org/" target="_blank" rel="noopener noreferrer">
+                                                <LiaTelegramPlane />
+                                            </a>
+                                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                                                <FaInstagram />
+                                            </a>
+                                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                                                <SlSocialFacebook />
+                                            </a>
+                                            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+                                                <CiTwitter />
+                                            </a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -229,6 +239,14 @@ const Home = () => {
                     </Slider>
                 </div>
             </div>
+
+            {/* Our Partners and Clients */}
+                <OurSwiper/>
+
+                {/* Our Media */}
+                <OurMedia/>
+           
+
 
         </div>
     );
