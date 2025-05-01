@@ -1,7 +1,7 @@
 // layout/MainLayout.jsx
 import React from "react";
-import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 export default function MainLayout() {
   return (
