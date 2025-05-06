@@ -9,6 +9,9 @@ import man from '../img/man.png';
 import OurSwiper from '../Components/OurSwiper';
 import OurMedia from '../Components/OurMedia';
 import Students from '../Components/Students';
+import Quations from '../Components/Quations';
+import WorkShop from '../Components/WorkShop';
+import Footer from '../Components/Footer';
 
 // Slider
 import Slider from "react-slick";
@@ -18,7 +21,6 @@ import { SlSocialFacebook } from 'react-icons/sl';
 import { CiTwitter } from 'react-icons/ci';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Quations from '../Components/Quations';
 
 const teamMembers = [
     {
@@ -250,8 +252,10 @@ const Home = () => {
                 <Students/>
                 {/* Frequently asked questions */}
                 <Quations/>
-           
-
+                {/* WorkShop */}
+                <WorkShop/>
+                {/* Footer */}
+                <Footer/>
 
         </div>
     );
