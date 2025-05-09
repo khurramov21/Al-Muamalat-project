@@ -72,25 +72,33 @@ const PartnersSlider = () => {
       </div>
     ));
 
-  return (
-    <div className="w-[1320px] mx-auto pt-[70px] pb-[70px] absolute top-[2580px]">
-      <h1 className="font-semibold text-[40px] text-[#000000] text-center mb-[40px]">
-        Our Partners and Clients
-      </h1>
-
-      <div className="flex flex-col gap-[20px]">
-        {/* Slider 1 */}
-        <div className="swiper w-full h-[180px] overflow-hidden" ref={swiperRef1}>
-          <div className="swiper-wrapper gap-[70px]">{renderSlides()}</div>
-        </div>
-
-        {/* Slider 2 */}
-        <div className="swiper w-full h-[180px] overflow-hidden" ref={swiperRef2}>
-          <div className="swiper-wrapper gap-[70px]">{renderSlides()}</div>
+    return (
+      <div className="w-full lg:w-[1400px] mx-auto pt-[50px] lg:pt-[70px] pb-[50px] lg:pb-[70px] px-[16px] lg:px-0 relative lg:absolute lg:top-[2580px]">
+        
+        <h1 className="font-semibold text-[26px] sm:text-[32px] lg:text-[40px] text-[#000000] text-center mb-[30px] lg:mb-[40px]">
+          Our Partners and Clients
+        </h1>
+    
+        <div className="flex flex-col gap-[20px] sm:gap-[16px] lg:gap-[20px]">
+          
+          {/* Slider 1 */}
+          <div className="swiper w-full h-[160px] sm:h-[150px] lg:h-[170px] overflow-hidden" ref={swiperRef1}>
+            <div className="swiper-wrapper  max-w-[280px] gap-[16px] sm:gap-[30px] lg:gap-[70px]">
+              {renderSlides()}
+            </div>
+          </div>
+    
+          {/* Slider 2 */}
+          <div className="swiper w-full h-[160px] sm:h-[150px] lg:h-[170px] overflow-hidden" ref={swiperRef2}>
+            <div className="swiper-wrapper max-w-[280px] gap-[16px] sm:gap-[30px] lg:gap-[70px]">
+              {renderSlides()}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+    
+    
 };
 
 export default PartnersSlider;

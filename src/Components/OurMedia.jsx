@@ -49,14 +49,14 @@ const OurMedia = () => {
   }
 
   return (
-    <div className='w-[1320px] h-[930px] mt-[2500px] gap-[60px] bg-[#FFFFFF]'>
+    <div className='w-[1400px] h-[920px] mt-[1370px] gap-[60px] bg-[#FFFFFF]'>
       <div className='w-[574px] h-[128px] gap-[20px] text-center mx-auto'>
         <h1 className='font-semibold text-[40px] leading-[100%] text-[#000000]'>Our Media</h1>
         <p className='font-semibold text-[17px] leading-[100%] text-[#686868] mt-[20px]'>Our team consists of seasoned professionals with extensive experience in Islamic finance and management. Each member brings a unique set of skills and expertise.</p>
       </div>
 
-      <div className='w-[1320px] h-[602px] gap-[15px]'>
-        <div className='w-[1180px] h-[71px] flex justify-between items-center mt-11 mx-auto'>
+      <div className='w-[1160px] h-[602px] gap-[15px] mx-auto'>
+        <div className='w-[1160px] h-[71px] flex justify-between items-center mt-11 mx-auto'>
           <h1 className='font-semibold text-[35px] leading-[100%] text-[#000000]'>
             Our media showcase
           </h1>
@@ -66,7 +66,7 @@ const OurMedia = () => {
           </div>
         </div>
 
-        <div className='w-[1180px] h-[516px] mx-auto justify-between flex'>
+        <div className='w-[1160px] h-[516px] mx-auto justify-between flex'>
           {visibleCards.map((card, index) => (
             <div key={index} className='w-[380px] h-[516px] rounded-[10px] bg-[#D9D9D9] relative overflow-hidden'>
               <img src={card.image} alt="" className='absolute top-0 left-0 w-full h-full object-cover z-0' />
