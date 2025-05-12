@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import logo from '../img/navbar-logo.png'
-import loginImg from '../img/login-img.png'
+import loginImg from '../img/loginImg.png'
 import { GoPerson } from 'react-icons/go'
 import { MdOutlineEmail } from 'react-icons/md'
 import { Link } from 'react-router-dom'
