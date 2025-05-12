@@ -7,10 +7,10 @@ import OurServices from '../Components/OurServices';
 import OurExpert from '../Components/OurExpert';
 import OurSwiper from '../Components/OurSwiper';
 import OurMedia from '../Components/OurMedia';
-// import Students from '../Components/Students';
-// import Quations from '../Components/Quations';
-// import WorkShop from '../Components/WorkShop';
-// import Footer from '../Components/Footer';
+import Students from '../Components/Students';
+import Quations from '../Components/Quations';
+import WorkShop from '../Components/WorkShop';
+import Footer from '../Components/Footer';
 
 const Home = () => {
     return (
@@ -81,13 +81,13 @@ const Home = () => {
             {/* Our Media */}
             <OurMedia/>
             {/* What students say*/}
-            {/* <Students/> */}
+            <Students/>
             {/* Frequently asked questions */}
-            {/* <Quations/> */}
+            <Quations/>
             {/* WorkShop */}
-            {/* <WorkShop/> */}
+            <WorkShop/>
             {/* Footer */}
-            {/* <Footer/>  */}
+            <Footer/>
         </div>
       );
       
