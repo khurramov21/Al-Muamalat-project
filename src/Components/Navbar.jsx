@@ -67,9 +67,9 @@ const Navbar = () => {
 
           <span className='text-[#76767699]'>|</span>
 
-          <button className='w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans font-semibold text-[15px]'>
+          <Link to="/login" className='w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans font-semibold text-[15px] flex items-center justify-center'>
             Sign In
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Burger Menu Button */}
@@ -116,9 +116,9 @@ const Navbar = () => {
             </div>
 
             {/* Sign In Button in Mobile */}
-            <button className='w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans font-semibold text-[15px] mt-4'>
+            <Link to="/login" className='w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans font-semibold text-[15px] mt-4 flex items-center justify-center' >
               Sign In
-            </button>
+            </Link>
           </ul>
         </div>
       )}
