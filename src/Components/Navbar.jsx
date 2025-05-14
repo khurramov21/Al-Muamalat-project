@@ -10,7 +10,6 @@ const Navbar = () => {
 
   const languages = [
     { code: 'ENG', label: '🇬🇧 ENG' },
-    { code: 'RUS', label: '🇷🇺 RUS' },
     { code: 'UZ', label: '🇺🇿 UZ' }
   ]
 
@@ -20,7 +19,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="w-full max-w-[1400px] mx-auto bg-white shadow-md">
+    <div className="w-full max-w-[1440px] mx-auto bg-white shadow-md">
       <div className="max-w-[1180px] mx-auto flex justify-between items-center py-4 px-8 sm:px-12">
         {/* Logo Section */}
         <div className="flex items-center gap-4">
@@ -101,7 +100,7 @@ const Navbar = () => {
               </div>
 
               {dropdownOpen && (
-                <div className="absolute bg-white shadow-md border rounded-md mt-2 right-0 z-10">
+                <div className="absolute bg-white shadow-md border rounded-md mt-2 right-0 z-10 ">
                   {languages.filter(l => l.code !== selectedLang).map(lang => (
                     <div
                       key={lang.code}

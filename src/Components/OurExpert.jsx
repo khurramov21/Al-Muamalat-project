@@ -45,7 +45,7 @@ const sliderSettings = {
 
 const OurExpert = () => {
     return (
-          <div className='w-full lg:w-[1400px] h-auto lg:absolute lg:top-[1853px] pt-[70px] pb-[70px] px-[20px]'>
+          <div className='w-full lg:w-[1440px] h-auto lg:absolute lg:top-[1853px] pt-[70px] pb-[70px] px-[20px]'>
             <div className='w-full text-center mb-[40px]'>
               <h2 className='font-semibold text-[28px] lg:text-[40px] text-[#000000]'>Our Expert Team</h2>
               <p className='font-semibold text-[15px] lg:text-[17px] text-[#686868] w-full lg:w-[60%] mx-auto'>

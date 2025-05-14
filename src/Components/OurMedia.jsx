@@ -49,7 +49,7 @@ const OurMedia = () => {
   }
 
   return (
-    <div className='w-[1400px] h-[920px] mt-[1370px] gap-[60px] bg-[#FFFFFF]'>
+    <div className='w-[1440px] h-[920px] mt-[1370px] gap-[60px] bg-[#FFFFFF]'>
       <div className='w-[574px] h-[128px] gap-[20px] text-center mx-auto'>
         <h1 className='font-semibold text-[40px] leading-[100%] text-[#000000]'>Our Media</h1>
         <p className='font-semibold text-[17px] leading-[100%] text-[#686868] mt-[20px]'>Our team consists of seasoned professionals with extensive experience in Islamic finance and management. Each member brings a unique set of skills and expertise.</p>

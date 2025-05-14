@@ -73,7 +73,7 @@ const PartnersSlider = () => {
     ));
 
     return (
-      <div className="w-full lg:w-[1400px] mx-auto pt-[50px] lg:pt-[70px] pb-[50px] lg:pb-[70px] px-[16px] lg:px-0 relative lg:absolute lg:top-[2580px]">
+      <div className="w-full lg:w-[1440px] mx-auto pt-[50px] lg:pt-[70px] pb-[50px] lg:pb-[70px] px-[16px] lg:px-0 relative lg:absolute lg:top-[2580px]">
         
         <h1 className="font-semibold text-[26px] sm:text-[32px] lg:text-[40px] text-[#000000] text-center mb-[30px] lg:mb-[40px]">
           Our Partners and Clients

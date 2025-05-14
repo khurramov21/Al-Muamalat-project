@@ -14,7 +14,7 @@ import Footer from '../Components/Footer';
 
 const Home = () => {
     return (
-        <div className='mx-auto w-full max-w-[1400px] max-h-[678px] bg-[#009688] relative'>
+        <div className='mx-auto w-full max-w-[1440px] max-h-[678px] bg-[#009688] relative'>
           <div className="w-full max-w-[1180px] h-full mx-auto relative px-4 sm:px-6 md:px-[50px]">
             <div className="flex flex-col lg:flex-row justify-between w-full">
       

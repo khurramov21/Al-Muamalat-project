@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom'
 
 const Register = () => {
   return (
-    <div className='w-[1320px] h-[800px] mx-auto pl-[70px] flex items-center justify-center mt-6'>
-      <div className='w-[700px] h-[794px] mt-[112px]'>
+    <div className='w-[1320px] h-[670px] mx-auto pl-[70px] flex items-center justify-center mt-6'>
+      <div className='w-[700px] h-[670px] mt-[112px]'>
         <div className='flex justify-between w-[570px] h-[100px]'>
           <div className='flex items-center gap-[10px] w-[340px] h-[56px]'>
             <img src={logo} alt="logo" />
@@ -51,7 +51,7 @@ const Register = () => {
 
       </div>
 
-      <div className='w-[700px] h-[794px] mt-[20px] bg-[#009688] rounded-[40px]'>
+      <div className='w-[700px] h-[794px] mt-[90px] bg-[#009688] rounded-[40px]'>
         <div className='w-[400px] h-[400px] flex items-center justify-center mx-auto mt-[152px]'>
           <img src={registerImg} alt="" />
         </div>

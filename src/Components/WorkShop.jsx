@@ -2,7 +2,7 @@ import React from 'react'
 
 const WorkShop = () => {
   return (
-    <div className='w-[1320px] h-[550px] pl-[70px] flex mt-6'>
+    <div className='w-[1440px] h-[550px] flex mt-6 mx-auto items-center justify-center'>
       <div className='w-[700px] h-[465px] rounded-tl-[10px] rounded-bl-[10px] bg-[#FAE9D3]'>
         <div className='w-[602px] h-[187px] gap-[20px] flex flex-col justify-center mx-auto mt-[50px]'>
           <h1 className='font-semibold text-[32px] leading-[100%] text-[#D28527]'>Workshops and Spiritual Development</h1>

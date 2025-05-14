@@ -4,7 +4,7 @@ import our4 from '../img/our4.png';
 
 const OurServices = () => {
     return (
-            <div className='w-full max-w-[1400px] h-auto left-0 px-4 mt-[170px]'>
+            <div className='w-full max-w-[1440px] h-auto left-0 px-4 mt-[170px]'>
                 <div className='w-full flex flex-col items-center mt-[70px] text-center'>
                     <h1 className='font-semibold text-[32px] sm:text-[40px] leading-[100%] text-[#000000]'>
                         Our services

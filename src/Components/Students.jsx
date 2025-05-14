@@ -3,7 +3,7 @@ import studentsImg from '../img/studentsImg.png'
 
 const Students = () => {
   return (
-    <div className='w-[1320px] h-[728px] gap-[60px] bg-[#FFFFFF]'>
+    <div className='w-[1440px] h-[728px] gap-[60px] bg-[#FFFFFF]'>
         <div className='w-[574px] h-[128px] gap-[16px] text-center mx-auto mt-[-40px]'>
             <h1 className='font-semibold text-[40px] leading-[100%] text-[#000000]'>What students say</h1>
             <p className='font-semibold text-[17px] leading-[100%] text-[#686868] mt-[20px]'>Our team consists of seasoned professionals with extensive experience in Islamic finance and management. Each member brings a unique set of skills and expertise.</p>
