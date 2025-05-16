@@ -3,7 +3,8 @@ import React from 'react'
 const WorkShop = () => {
   return (
     <div className='w-[1440px] h-[550px] flex mt-6 mx-auto items-center justify-center'>
-      <div className='w-[700px] h-[465px] rounded-tl-[10px] rounded-bl-[10px] bg-[#FAE9D3]'>
+     <div className='w-[1180px] h-[465px] flex'>
+     <div className='w-[700px] h-[465px] rounded-tl-[10px] rounded-bl-[10px] bg-[#FAE9D3]'>
         <div className='w-[602px] h-[187px] gap-[20px] flex flex-col justify-center mx-auto mt-[50px]'>
           <h1 className='font-semibold text-[32px] leading-[100%] text-[#D28527]'>Workshops and Spiritual Development</h1>
           <p className='font-sans text-[22px] leading-[100%] text-[#D28527]'>Participate in our weekly workshops focused on Islamic studies and spiritual growth. These sessions are designed to help you strengthen your connection with faith and acquire essential skills for daily life</p>
@@ -36,6 +37,7 @@ const WorkShop = () => {
 
         </div>
       </div>
+     </div>
     </div>
   )
 }

@@ -30,7 +30,7 @@ const OurMedia = () => {
     {
       title: 'The global growth of Islamic finance',
       image: ourMedia3
-    }
+    },
   ]
 
   const [startIndex, setStartIndex] = useState(0)
@@ -61,9 +61,18 @@ const OurMedia = () => {
             Our media showcase
           </h1>
           <div className='flex gap-[23px] w-[123px] h-[50px]'>
-            <button onClick={handlePrev} className='w-[50px] h-[50px] bg-[#ECF3F6] rounded-[50px] text-center cursor-pointer p-[18px]'><FaArrowLeft /></button>
-            <button onClick={handleNext} className='w-[50px] h-[50px] bg-[#009688] rounded-[50px] text-center cursor-pointer p-[18px]'><FaArrowRight className='text-[#FFFFFF]' /></button>
+            <button
+              onClick={handlePrev}
+              className='w-[50px] h-[50px] bg-[#ECF3F6] hover:bg-[#c9e0e7] rounded-[50px] text-center cursor-pointer p-[18px] transition-all duration-200 hover:shadow-md'>
+              <FaArrowLeft />
+            </button>
+            <button
+              onClick={handleNext}
+              className='w-[50px] h-[50px] bg-[#009688] hover:bg-[#00796b] rounded-[50px] text-center cursor-pointer p-[18px] transition-all duration-200 hover:shadow-md'>
+              <FaArrowRight className='text-[#FFFFFF]' />
+            </button>
           </div>
+
         </div>
 
         <div className='w-[1160px] h-[516px] mx-auto justify-between flex'>
