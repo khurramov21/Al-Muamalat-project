@@ -1,6 +1,7 @@
 import React from 'react'
 import ProfileImg from '../img/profile-img.png'
 import Footer from '../Components/Footer'
+import { Link } from 'react-router-dom'
 
 const Profile = () => {
     return (
@@ -8,7 +9,7 @@ const Profile = () => {
             <div className='w-[1180px] h-[531px] mx-auto gap-[28px]'>
                 <div className='flex gap-[28px] pt-[140px]'>
                     <button className='w-[157px] h-[43px] bg-[#009688] rounded-[10px] text-[#FFFFFF] font-sans font-semibold text-[16px] leading-[100%] tracking-[0%]'>Profile</button>
-                    <button className='w-[157px] h-[43px] border-[2px] border-[#686868] bg-[#FFFFFF] rounded-[10px] text-[#686868] font-sans font-semibold text-[16px] leading-[100%] tracking-[0%]'>Course</button>
+                    <Link to='/course' className='w-[157px] h-[43px] border-[2px] border-[#686868] bg-[#FFFFFF] rounded-[10px] text-[#686868] font-sans font-semibold text-[16px] leading-[100%] tracking-[0%] flex items-center justify-center'>Course</Link>
                 </div>
 
                 <div className='w-[1180px] h-[460px] rounded-[10px] bg-white shadow-[2px_2px_40px_1px_#0000001A] mt-[28px] p-[30px]'>
