@@ -8,6 +8,7 @@ const Navbar = () => {
   const [selectedLang, setSelectedLang] = useState('ENG')
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const getUserToken = localStorage.getItem("testUserToken") 
 
   const languages = [
     { code: 'ENG', label: '🇬🇧 ENG' },
@@ -20,6 +21,16 @@ const Navbar = () => {
   }
 
   const isActive = (path) => location.pathname === path
+
+  const menuItems = [
+    { to: '/programs', label: 'Programs'},
+    { path: '/international-educational-programs', label: 'International educational programs' },
+    { path: '/specialized-courses', label: 'Specialized courses' },
+    { path: '/islamic-finance-literacy', label: 'Islamic Finance Literacy Course' },
+    { path: '/certification-program', label: 'Certification program' },
+  ]
+
+  const defaultLabel = menuItems.find(item => item.path === location.pathname)?.label || 'Programs'
 
   return (
     <div className="w-[1440px] mx-auto bg-white shadow-md">
@@ -36,7 +47,27 @@ const Navbar = () => {
           <div className="hidden sm:flex">
             <ul className='flex gap-12 font-sans font-semibold text-[15px] text-[#333]'>
               <li className={isActive("/home") ? 'text-[#009688]' : ''}><Link to="/home">Home</Link></li>
-              <li className={isActive("/programs") ? 'text-[#009688]' : ''}><Link to="/programs">Programs</Link></li>
+
+              <div className="relative group">
+                {/* Default (selected) */}
+                <div className="cursor-pointer">
+                  {defaultLabel}
+                </div>
+
+                {/* Dropdown menu (hover) */}
+                <div className="absolute hidden group-hover:block bg-white border rounded mt-1 z-10 w-[300px]">
+                  {menuItems.map((item) => (
+                    <Link 
+                      key={item.path}
+                      to={item.path}
+                      className={`${isActive(item.path) ? 'text-[#009688]' : ''} block px-4 py-2 hover:bg-[#f0f0f0] text-sm`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
               <li className={isActive("/financy-tools") ? 'text-[#009688]' : ''}><Link to="/financy-tools">Financy tools</Link></li>
               <li className={isActive("/contact") ? 'text-[#009688]' : ''}><Link to="/contact">Contact</Link></li>
             </ul>
@@ -71,15 +102,31 @@ const Navbar = () => {
 
             <span className='text-[#76767699]'>|</span>
 
-            {/* Sign In and User Icon */}
-            <div className='flex items-center gap-2'>
+            {/* Sign In and Profile */}
+
+            {
+              getUserToken ? (
+                 <Link to="/profile" className="text-[18px] w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans flex items-center justify-center cursor-pointer gap-[10px]">
+                <FaUser />
+                <span className="font-sans ">Profile</span>
+              </Link>
+              ) : (
+                <Link to="/login" className='w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans font-semibold text-[15px] flex items-center justify-center'>
+                Sign In
+              </Link>
+              ) 
+            }
+
+            {/* <div className='flex items-center gap-2'>
               <Link to="/login" className='w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans font-semibold text-[15px] flex items-center justify-center'>
                 Sign In
               </Link>
-              <Link to="/profile" className="text-[18px] text-[#009688] cursor-pointer">
+              <Link to="/profile" className="text-[18px] w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans flex items-center justify-center cursor-pointer gap-[10px]">
                 <FaUser />
+                <span className="font-sans ">Profile</span>
               </Link>
-            </div>
+            </div> */}
+
           </div>
 
           {/* Mobile Burger */}

@@ -3,7 +3,7 @@ import logo from '../img/navbar-logo.png'
 import loginImg from '../img/loginImg.png'
 import { GoPerson } from 'react-icons/go'
 import { MdOutlineEmail } from 'react-icons/md'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaAngleDown } from 'react-icons/fa'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
@@ -30,11 +30,13 @@ export default function Login() {
 
     const auth = useAuth()
     const { register, handleSubmit } = useForm()
+    const navigate = useNavigate()
   
     const onSubmit = (data) => {
       const { full_name, email, phone_number } = data;
       auth.login({ full_name, email, phone_number }, () => {
         toast.success("Login successfully");
+        navigate("/profile")
       },[]);
     };
     
@@ -46,7 +48,7 @@ export default function Login() {
           <div className='flex justify-between w-[570px] h-[100px]'>
             <div className='flex items-center gap-[10px] w-[340px] h-[56px]'>
               <img src={logo} alt="logo" />
-              <Link to="/" className='font-semibold text-[24px] leading-[100%] text-[#009688]'>Al-Muamalat</Link>
+              <Link to="/home" className='font-semibold text-[24px] leading-[100%] text-[#009688]'>Al-Muamalat</Link>
             </div>
           </div>
 

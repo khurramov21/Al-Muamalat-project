@@ -7,6 +7,7 @@ import Register from "../Components/Register";
 import Contact from "../Pages/Contact";
 import Profile from "../Pages/Profile";
 import Course from "../Components/Course";
+import Programs from "../Components/Programs";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
         path: "/course", 
         element: <Course />,
       },
+      {
+        path: "/programs", 
+        element: <Programs />,
+      }
     ],
   },
   {

@@ -35,5 +35,5 @@ request.interceptors.request.use(
     }
 )
 
-export {request}
+export default request
  
