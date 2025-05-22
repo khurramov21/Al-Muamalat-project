@@ -1,58 +1,58 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import request from "../Services/Request";
 
 const defaultProvider = {
-    loading:true,
-    setLoading:()=> Boolean,
-    register:()=> Promise.resolve(),
-    login:()=> Promise.resolve(),
-}
+    loading: true,
+    setLoading: () => Boolean,
+    register: () => Promise.resolve(),
+};
 
 const AuthContext = createContext(defaultProvider);
 
-const AuthProvider = ({children}) => {
-    const [loading,setLoading] = useState(defaultProvider?.loading)
+const AuthProvider = ({ children }) => {
+    const [loading, setLoading] = useState(true); // boshlanishda true
+
+    //  loadingni render paytida emas, faqat bir marta o'zgartirish
+    useEffect(() => {
+        setLoading(false);
+    }, []);
 
     const handleRegister = (submitData) => {
-        setLoading(false)
+        setLoading(true); // register boshlanishida true qilish mumkin
         request.post("/auth/signup", submitData)
-        .then((response) => {
-            console.log(response?.data?.data)
-            window.localStorage.setItem("testUserToken", response?.data?.data?.tokens.accessToken)
-        })
-        .catch((err) => {
-            console.log(err); 
-        })
-        .finally(() => {
-            setLoading(true)
-        })
-    }
-
+            .then((response) => {
+                console.log(response?.data?.data);
+                window.localStorage.setItem("testUserToken", response?.data?.data?.tokens?.accessToken);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    };
     const handleLogin = (submitData) => {
-        setLoading(false)
+        setLoading(true);
         request.post("/auth/signin", submitData)
-        .then((response) => {
-            console.log(response?.data?.data)
-            window.localStorage.setItem("testUserToken", response?.data?.data?.tokens.accessToken)
-        })
-        .catch((err) => {
-            console.log(err); 
-        })
-        .finally(() => {
-            setLoading(true)
-        })
-    }
+            .then((response) => {
+                console.log(response?.data?.data);
+                window.localStorage.setItem("testUserToken", response?.data?.data?.tokens?.accessToken);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    };
 
-    const values = {
+    const value = {
         loading,
-        register:handleRegister,
-        login:handleLogin,
-    }
+        register: handleRegister,
+        login: handleLogin,
+    };
 
-    return (
-        <AuthContext.Provider value={values}>
-            {children}
-        </AuthContext.Provider>
-    )
-}
+    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+};
 
-export {AuthContext, AuthProvider}
+export { AuthContext, AuthProvider };

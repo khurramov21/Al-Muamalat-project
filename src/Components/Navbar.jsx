@@ -111,7 +111,7 @@ const Navbar = () => {
                 <span className="font-sans ">Profile</span>
               </Link>
               ) : (
-                <Link to="/login" className='w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans font-semibold text-[15px] flex items-center justify-center'>
+                <Link to="/register" className='w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans font-semibold text-[15px] flex items-center justify-center'>
                 Sign In
               </Link>
               ) 
@@ -175,7 +175,7 @@ const Navbar = () => {
 
             {/* Mobile Sign In + User */}
             <div className='flex items-center justify-center gap-2 mt-4'>
-              <Link to="/login" className='w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans font-semibold text-[15px] flex items-center justify-center'>
+              <Link to="/register" className='w-[110px] h-[38px] bg-[#009688] rounded-[8px] text-white font-sans font-semibold text-[15px] flex items-center justify-center'>
                 Sign In
               </Link>
               <Link to="/profile" className="text-[18px] text-[#009688] cursor-pointer">
