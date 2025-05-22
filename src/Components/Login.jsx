@@ -11,13 +11,13 @@ import axios from 'axios'
 const Login = () => {
   const { register, handleSubmit } = useForm()
 
-  const {mutate, isLoading, error} = useMutation({
+  const { mutate, isLoading, error } = useMutation({
     mutationFn: (submitData) => {
       return axios.post("https://api.al-muamalat.uz/api/auth/signin", submitData)
-      .then((response) => {
-        localStorage.setItem("testUserToken", response?.data?.data?.tokens?.accessToken)
-        toast.success("Login successfully")
-      })
+        .then((response) => {
+          localStorage.setItem("testUserToken", response?.data?.data?.tokens?.accessToken)
+          toast.success("Login successfully")
+        })
     }
   })
 
@@ -27,20 +27,28 @@ const Login = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className='w-[1320px] h-[670px] mx-auto pl-[70px] flex items-center justify-center mt-6'>
-        <div className='w-[700px] h-[670px] mt-[112px]'>
-          <div className='flex justify-between w-[570px] h-[100px]'>
+      <div className='w-full lg:w-[1320px] h-auto lg:h-[670px] mx-auto px-4 lg:pl-[70px] flex flex-col lg:flex-row items-center justify-center mt-6'>
+
+        {/* Form Section */}
+        <div className='w-full lg:w-[700px] h-auto lg:h-[670px] mt-[40px] lg:mt-[112px] flex flex-col items-center lg:items-start'>
+
+          {/* Logo */}
+          <div className='flex justify-between w-full lg:w-[570px] h-[100px]'>
             <div className='flex items-center gap-[10px] w-[340px] h-[56px]'>
               <img src={logo} alt="logo" />
               <Link to="/" className='font-semibold text-[24px] leading-[100%] text-[#009688]'>Al-Muamalat</Link>
             </div>
           </div>
 
-          <div className='w-[553px] gap-[80px] mt-[40px]'>
-            <h1 className='font-semibold text-[80px] leading-[100%] text-[#000000]'>Get started</h1>
+          {/* Title */}
+          <div className='w-full lg:w-[553px] gap-[80px] mt-[40px] text-center lg:text-left'>
+            <h1 className='font-semibold text-[40px] md:text-[60px] lg:text-[80px] leading-[100%] text-[#000000]'>
+              Get started
+            </h1>
           </div>
 
-          <div className='w-[454px] h-[190px] gap-[24px] flex flex-col mt-[80px]' >
+          {/* Input fields */}
+          <div className='w-full lg:w-[454px] h-auto lg:h-[190px] gap-[24px] flex flex-col mt-[60px]'>
             <div className="relative">
               <input
                 type="text"
@@ -61,23 +69,25 @@ const Login = () => {
             </div>
           </div>
 
-          <div className='flex flex-col gap-[10px]'>
-            <button onClick={onSubmit} type="submit" className='w-[454px] h-[60px] bg-[#009688] rounded-[8px] flex items-center justify-center cursor-pointer font-sans text-[20px] leading-[100%] text-[#FFFFFF]'>
+          {/* Buttons */}
+          <div className='flex flex-col gap-[10px] mt-[30px] w-full lg:w-[454px]'>
+            <button type="submit" className='w-full h-[60px] bg-[#009688] rounded-[8px] flex items-center justify-center cursor-pointer font-sans text-[20px] leading-[100%] text-[#FFFFFF]'>
               Sign In
             </button>
 
-            <Link to="/login" className='w-[454px] font-sans text-[26px] leading-[100%] text-[#8F8F8F] text-center hover:text-[#667cf7]'>
+            <Link to="/login" className='font-sans text-[20px] lg:text-[26px] leading-[100%] text-[#8F8F8F] text-center hover:text-[#667cf7]'>
               Create a new account !
             </Link>
           </div>
         </div>
 
-        <div className='w-[700px] h-[794px] mt-[90px] bg-[#009688] rounded-[40px]'>
-          <div className='w-[400px] h-[400px] flex items-center justify-center mx-auto mt-[152px]'>
-            <img src={registerImg} alt="" />
+        {/* Image Panel */}
+        <div className='w-full lg:w-[700px] h-auto lg:h-[794px] mt-[40px] lg:mt-[90px] bg-[#009688] rounded-[40px] p-4 flex flex-col items-center justify-center'>
+          <div className='w-full max-w-[400px] h-auto flex items-center justify-center mt-[60px] lg:mt-[152px]'>
+            <img src={registerImg} alt="" className='w-full h-auto object-contain' />
           </div>
 
-          <h1 className='w-[500px] mx-auto h-[179px] flex items-center font-semibold text-[36px] text-[#FFFFFF] leading-[100%] text-center'>
+          <h1 className='w-full max-w-[500px] mx-auto h-auto lg:h-[179px] mt-6 flex items-center font-semibold text-[20px] md:text-[28px] lg:text-[36px] text-[#FFFFFF] leading-[100%] text-center'>
             Welcome to Al Muamalat – Empowering Your Journey in Islamic Finance
           </h1>
         </div>
