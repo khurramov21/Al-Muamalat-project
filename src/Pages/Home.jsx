@@ -84,7 +84,7 @@ const Home = () => {
       {/* What students say*/}
       <Students />
       {/* Frequently asked questions */}
-      {/* <Quations /> */}
+      <Quations />
       {/* WorkShop */}
       {/* <WorkShop /> */}
        {/* Footer */}

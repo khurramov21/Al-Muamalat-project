@@ -49,7 +49,7 @@ const OurMedia = () => {
   }
 
   return (
-    <div className='w-[1440px] h-[920px] mt-[1370px] gap-[60px] bg-[#FFFFFF] max-md:w-full max-md:h-auto max-md:mt-[120px] max-md:px-4'>
+    <div className='w-[1440px] h-[920px] mt-[1340px] gap-[60px] bg-[#FFFFFF] max-md:w-full max-md:h-auto max-md:mt-[120px] max-md:px-4'>
       <div className='w-[574px] h-[128px] gap-[20px] text-center mx-auto max-md:w-full max-md:h-auto'>
         <h1 className='font-semibold text-[40px] leading-[100%] text-[#000000] max-md:text-[28px]'>
           Our Media
