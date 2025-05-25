@@ -82,7 +82,7 @@ const Home = () => {
       {/* Our Media */}
       <OurMedia />
       {/* What students say*/}
-      {/* <Students /> */}
+      <Students />
       {/* Frequently asked questions */}
       {/* <Quations /> */}
       {/* WorkShop */}
