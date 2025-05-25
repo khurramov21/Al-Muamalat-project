@@ -86,7 +86,7 @@ const Home = () => {
       {/* Frequently asked questions */}
       <Quations />
       {/* WorkShop */}
-      {/* <WorkShop /> */}
+      <WorkShop />
        {/* Footer */}
      <div className='w-full max-w-[1440px] mx-auto mt-[100px]'> 
       <Footer />
