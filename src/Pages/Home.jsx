@@ -82,13 +82,15 @@ const Home = () => {
       {/* Our Media */}
       <OurMedia />
       {/* What students say*/}
-      <Students />
+      {/* <Students /> */}
       {/* Frequently asked questions */}
-      <Quations />
+      {/* <Quations /> */}
       {/* WorkShop */}
-      <WorkShop />
-      {/* Footer */}
+      {/* <WorkShop /> */}
+       {/* Footer */}
+     <div className='w-full max-w-[1440px] mx-auto mt-[100px]'> 
       <Footer />
+     </div>
     </div>
   );
 
