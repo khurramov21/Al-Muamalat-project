@@ -86,7 +86,7 @@ const Contact = () => {
         <WorkShop />
       </div>
 
-      <div className='w-full max-w-[1440px] mx-auto sm:mt-[100px] lg:mt-[150px]'>
+      <div className='w-full max-w-[1440px] mx-auto sm:mt-[100px] lg:mt-[150px] max-md:mt-[66px]'>
         <Footer />
       </div>
    </>
