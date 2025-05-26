@@ -21,8 +21,11 @@ const Navbar = () => {
   }
 
   const isActive = (path) => location.pathname === path
+  const isProgramsPath = () =>
+    menuItems.some(item => location.pathname === item.path)
 
   const menuItems = [
+    { path: '/programs', label: 'Programs' },
     { path: '/international-educational-programs', label: 'International educational programs' },
     { path: '/specialized-courses', label: 'Specialized courses' },
     { path: '/islamic-finance-literacy', label: 'Islamic Finance Literacy Course' },
@@ -46,7 +49,9 @@ const Navbar = () => {
             <Link to="/home" className={isActive('/home') ? 'text-[#009688]' : ''}>Home</Link>
 
             <div className="relative group">
-              <span className="cursor-pointer">{defaultLabel}</span>
+              <span className={`cursor-pointer flex items-center gap-2 ${isProgramsPath() ? 'text-[#009688]' : ''}`}>
+                {defaultLabel} <FaAngleDown />
+              </span>
               <div className="absolute hidden group-hover:block bg-white border rounded mt-1 z-10 w-[300px]">
                 {menuItems.map(item => (
                   <Link key={item.path} to={item.path} className={`block px-4 py-2 text-sm hover:bg-gray-100 ${isActive(item.path) ? 'text-[#009688]' : ''}`}>
@@ -102,7 +107,21 @@ const Navbar = () => {
         <div className="md:hidden px-4 pb-4">
           <ul className="flex flex-col gap-4">
             <Link to="/home" onClick={() => setMenuOpen(false)} className={isActive('/home') ? 'text-[#009688]' : ''}>Home</Link>
-            <Link to="/programs" onClick={() => setMenuOpen(false)} className={isActive('/programs') ? 'text-[#009688]' : ''}>Programs</Link>
+
+            {/* Dropdown menu not clickable but shows submenu */}
+            <div>
+              <div className={`flex items-center gap-2 ${isProgramsPath() ? 'text-[#009688]' : ''}`}>
+                Programs <FaAngleDown />
+              </div>
+              <div className="ml-4 flex flex-col gap-1 mt-1">
+                {menuItems.map(item => (
+                  <Link key={item.path} to={item.path} onClick={() => setMenuOpen(false)} className={`text-sm ${isActive(item.path) ? 'text-[#009688]' : ''}`}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <Link to="/financy-tools" onClick={() => setMenuOpen(false)} className={isActive('/financy-tools') ? 'text-[#009688]' : ''}>Financy tools</Link>
             <Link to="/contact" onClick={() => setMenuOpen(false)} className={isActive('/contact') ? 'text-[#009688]' : ''}>Contact</Link>
 
@@ -135,4 +154,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar 
+export default Navbar

@@ -8,6 +8,7 @@ import Contact from "../Pages/Contact";
 import Profile from "../Pages/Profile";
 import Course from "../Components/Course";
 import Programs from "../Components/Programs";
+import FinancyTools from "../Components/FinancyTools";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
       {
         path: "/programs", 
         element: <Programs />,
+      },
+      {
+        path: "/financy-tools", 
+        element: <FinancyTools />,
       }
     ],
   },
