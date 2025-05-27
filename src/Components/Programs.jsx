@@ -1,6 +1,8 @@
 import React from 'react'
 import TickDouble from '../img/tick-double.png'
 import { GrShareRounded } from 'react-icons/gr'
+import Brief from './Brief'
+import MostPopular from './MostPopular'
 
 const Programs = () => {
   return (
@@ -60,6 +62,11 @@ const Programs = () => {
           </div>
 
         </div>
+
+        {/* Brief Section */}
+        <Brief />
+        {/* Most Popular Section */}
+        <MostPopular />     
 
       </div>
     </div>
