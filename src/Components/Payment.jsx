@@ -3,7 +3,7 @@ import OutlineTrue from '../img/outline-true.png'
 
 const Payment = () => {
   return (
-    <div className='w-full max-w-[1180px] mx-auto mt-[111px] flex flex-col lg:flex-row gap-10 lg:gap-0'>
+    <div className='w-full max-w-[1180px] mx-auto md:mt-[111px] mt-[189px] flex flex-col lg:flex-row gap-10 lg:gap-0 px-4'>
     {/* Left - Our Services */}
     <div className='w-full max-w-[552px] h-[794px] bg-[#009688] mx-auto'>
       <h1 className='font-bold text-[36px] text-[#FFFFFF] px-[20px] lg:px-[76px] pt-[30px] lg:pt-[76px] text-center lg:text-left md:mt-[40px]'>
@@ -17,7 +17,7 @@ const Payment = () => {
           Space for creative ideas
         </h1>
       </div>
-      <p className='w-full max-w-[364px] h-[96px] font-medium text-[16px] leading-[120%] text-[#FFFFFF] mx-auto lg:ml-[120px] mt-2 text-center lg:text-left'>
+      <p className='w-full max-w-[364px] h-[96px] font-medium text-[16px] leading-[120%] text-[#FFFFFF] mx-auto lg:ml-[120px] mt-2 text-center lg:text-left lg:px-[0px] px-[20px]'>
         Cyber Square nourishes young aspiring minds to get a clear vision of their ideas. We guide them in analyzing and building their vision and ideas into reality.
       </p>
 
@@ -28,7 +28,7 @@ const Payment = () => {
           Engaging and fun curriculum
         </h1>
       </div>
-      <p className='w-full max-w-[364px] h-[96px] font-medium text-[16px] leading-[120%] text-[#FFFFFF] mx-auto lg:ml-[120px] mt-2 text-center lg:text-left'>
+      <p className='w-full max-w-[364px] h-[96px] font-medium text-[16px] leading-[120%] text-[#FFFFFF] mx-auto lg:ml-[120px] mt-2 text-center lg:text-left lg:px-[0px] px-[20px]'>
         Our goal is to create an engaging system that provides exciting activities so children can understand the programming concepts thoroughly so that they can perform them on their own.
       </p>
 
@@ -39,7 +39,7 @@ const Payment = () => {
           Professional teaching methods
         </h1>
       </div>
-      <p className='w-full max-w-[364px] h-[96px] font-medium text-[16px] leading-[120%] text-[#FFFFFF] mx-auto lg:ml-[120px] mt-2 text-center lg:text-left'>
+      <p className='w-full max-w-[364px] h-[96px] font-medium text-[16px] leading-[120%] text-[#FFFFFF] mx-auto lg:ml-[120px] mt-2 text-center lg:text-left lg:px-[0px] px-[20px]'>
         We professionals at Cyber Square, have developed an in-depth understanding in how to teach kids and how to code. We believe in exposing kids to real programming languages and tools.
       </p>
     </div>

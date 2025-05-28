@@ -3,10 +3,14 @@ import TickDouble from '../img/tick-double.png'
 import { GrShareRounded } from 'react-icons/gr'
 import Brief from './Brief'
 import MostPopular from './MostPopular'
+import Payment from './Payment'
+import OurServices from './OurServices'
+import WorkShops from '../Components/WorkShop'
+import Footer from '../Components/Footer'
 
 const Programs = () => {
   return (
-    <div className='w-full max-w-[1440px] mx-auto px-4'>
+    <div className='w-full max-w-[1440px] mx-auto'>
       <div className='w-full max-w-[1180px] mx-auto'>
 
         {/* Title Section */}
@@ -66,9 +70,20 @@ const Programs = () => {
         {/* Brief Section */}
         <Brief />
         {/* Most Popular Section */}
-        <MostPopular />     
+        <MostPopular />
+        {/*Payment Section */}
+        <Payment />
+        {/*Our Services Section */}
+        <OurServices />
+        {/* WorkShops Section */}
+        <WorkShops />
 
       </div>
+      
+       {/* Footer Section */}
+     <div className="w-full max-w-[1440px] mx-auto mt-[100px]">
+     <Footer />
+     </div>
     </div>
   )
 }

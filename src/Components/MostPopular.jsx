@@ -4,11 +4,10 @@ import courseImg2 from '../img/course-img2.png'
 import courseImg3 from '../img/course-img3.png'
 import { IoStar, IoStarOutline } from 'react-icons/io5'
 import { GoArrowUpRight } from 'react-icons/go'
-import Payment from './Payment'
 
 // CourseCard component
 const CourseCard = ({ course, staticImg }) => (
-  <div className='w-full max-w-[312px] h-[418px] bg-[#F6F8F9] rounded-[24px] flex flex-col p-[16px] flex-shrink-0'>
+  <div className='w-full max-w-[312px] h-[435px] bg-[#F6F8F9] rounded-[24px] flex flex-col p-[16px] flex-shrink-0'>
     <div className='w-full h-[230px] rounded-[24px] p-[10px]' style={{ background: course.bg }}>
       <div className='w-[78px] h-[36px] flex items-center justify-center rounded-[6px] bg-white opacity-60'>
         <p className='font-semibold text-[16px] text-[#1B1D1F]'>{course.category}</p>
@@ -158,8 +157,6 @@ const MostPopular = () => {
             ›
           </button>
         </div>
-
-        <Payment />
 
       </div>
     </div>
