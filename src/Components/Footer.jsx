@@ -1,6 +1,7 @@
 import React from 'react'
 import FooterLogo from '../img/footer-logo.png'
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -15,10 +16,10 @@ const Footer = () => {
                 {/* Navigation Links */}
                 <div className='w-full max-w-[400px] h-[24px] mx-auto'>
                     <ul className='flex gap-[30px] sm:gap-[50px] font-sans text-[16px] leading-[100%] text-[#FFFFFF] pt-[40px] sm:pt-[80px] justify-center max-md:pt-[64px]'>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Services</li>
-                        <li>Contact US</li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/services">Services</Link></li>
+                        <li><Link to="/contact">Contact US</Link></li>
                     </ul>
                 </div>
 
