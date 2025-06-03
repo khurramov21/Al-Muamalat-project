@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import logo from '../img/navbar-logo.png'
 import { Link, useLocation } from 'react-router-dom'
 import { FaAngleDown, FaBars, FaUser } from 'react-icons/fa'
+import { useQuery } from '@tanstack/react-query'
 
 const Navbar = () => {
   const location = useLocation()
@@ -35,6 +36,13 @@ const Navbar = () => {
     { path: '/certification-program', label: 'Certification program' }
   ]
 
+  const {data, isLoading, error} = useQuery({
+    queryKey: ['courseData'],
+    queryFn: () => 
+      request.get('/new_modules')
+  })
+  console.log(data) 
+  
   const defaultLabel = menuItems.find(item => item.path === location.pathname)?.label || 'Programs'
 
   return (
@@ -56,10 +64,10 @@ const Navbar = () => {
               <span className={`cursor-pointer flex items-center gap-2 ${isProgramsPath() ? 'text-[#009688]' : ''}`}>
                 {defaultLabel} <FaAngleDown />
               </span>
-              <div className={`absolute ${programsDesktopOpen ? 'block' : 'hidden'} group-hover:block bg-white border rounded mt-1 z-10 w-[300px]`}>
-                {menuItems.map(item => (
+              <div className={`absolute ${programsDesktopOpen ? 'block' : 'hidden'} group-hover:block bg-white border rounded mt-1 z-10 w-[90px]`}>
+                {data?.data?.data?.map(item => (
                   <Link
-                    key={item.path}
+                    key={item.id}
                     to={item.path}
                     className={`block px-4 py-2 text-sm hover:bg-gray-100 ${isActive(item.path) ? 'text-[#009688]' : ''}`}
                   >
@@ -80,9 +88,9 @@ const Navbar = () => {
                 <FaAngleDown className="text-sm mt-[2px]" />
               </div>
               {dropdownOpen && (
-                <div className="absolute right-0 bg-white shadow-md border rounded mt-2 z-10">
+                <div className="w-[70px] absolute right-0 bg-white shadow-md border rounded mt-2 z-10">
                   {languages.filter(l => l.code !== selectedLang).map(lang => (
-                    <div key={lang.code} onClick={() => handleSelect(lang.code)} className="px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer">
+                    <div key={lang.code} onClick={() => handleSelect(lang.code)} className="px-2 py-2 hover:bg-gray-100 text-sm cursor-pointer">
                       {lang.label}
                     </div>
                   ))}
@@ -121,9 +129,9 @@ const Navbar = () => {
               </div>
               {programsOpen && (
                 <div className="ml-4 flex flex-col gap-1 mt-1">
-                  {menuItems.map(item => (
+                  {data?.data?.data?.map(item => (
                     <Link
-                      key={item.path}
+                      key={item.id}
                       to={item.path}
                       onClick={() => setMenuOpen(false)}
                       className={`text-sm hover:bg-gray-100 px-2 py-1 rounded ${isActive(item.path) ? 'text-[#009688]' : ''}`}

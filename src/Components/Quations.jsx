@@ -41,7 +41,7 @@ const Quations = () => {
       <div
         key={actualIndex}
         className={`w-[580px] min-h-[97px] md:w-[580px] lg:w-[580px] max-md:w-full max-md:h-auto ${
-          openIndex === actualIndex ? 'min-h-[216px]' : ''
+          openIndex === actualIndex ? 'min-h-[217px]' : ''
         } border-[2px] rounded-[10px] overflow-hidden transition-all duration-300 ${
           openIndex === actualIndex ? 'border-[#42978F]' : 'border-[#686868]'
         }`}

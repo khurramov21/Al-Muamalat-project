@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../img/navbar-logo.png'
 import registerImg from '../img/register-img.png'
 import { GoPerson } from 'react-icons/go'
@@ -7,23 +7,38 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
+import { useAuth } from '../context/Index'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
-  const { register, handleSubmit } = useForm()
+   const [phoneNumber, setPhoneNumber] = useState('');
+  
+    const auth = useAuth();
+    const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
+  
+    const onSubmit = (data) => {
+      const {password, phone_number } = data;
+      auth.login({ password, phone_number }, () => {
+        toast.success("Login successfully");
+        navigate("/home");
+      }, []);
+    };
+  // const { register, handleSubmit } = useForm()
 
-  const { mutate, isLoading, error } = useMutation({
-    mutationFn: (submitData) => {
-      return axios.post("https://api.al-muamalat.uz/api/auth/signin", submitData)
-        .then((response) => {
-          localStorage.setItem("testUserToken", response?.data?.data?.tokens?.accessToken)
-          toast.success("Login successfully")
-        })
-    }
-  })
+  // const { mutate, isLoading, error } = useMutation({
+  //   mutationFn: (submitData) => {
+  //     return axios.post("https://api.al-muamalat.uz/api/auth/signin", submitData)
+  //       .then((response) => {
+  //         localStorage.setItem("testUserToken", response?.data?.data?.tokens?.accessToken)
+  //         toast.success("Login successfully")
+  //       })
+  //   }
+  // })
 
-  const onSubmit = (data) => {
-    mutate(data)
-  }
+  // const onSubmit = (data) => {
+  //   mutate(data)
+  // }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

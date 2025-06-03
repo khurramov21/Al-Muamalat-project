@@ -5,6 +5,7 @@ const defaultProvider = {
     loading: true,
     setLoading: () => Boolean,
     register: () => Promise.resolve(),
+    login: () => Promise.resolve(),
 };
 
 const AuthContext = createContext(defaultProvider);
