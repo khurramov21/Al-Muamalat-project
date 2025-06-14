@@ -8,19 +8,19 @@ const request = axios.create({
    params: {}
 })
 
-request.interceptors.response.use(
-    (response) => {
-        const token = localStorage.getItem("testUserToken")
-        if(token){
-            response.headers["Authorization"] = `Bearer ${token}`
-        }
-        return response
+request.interceptors.request.use(
+    (config) => {
+      const token = localStorage.getItem("testUserToken");
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+      return config;
     },
     (error) => {
-        console.log(error);
-        return Promise.reject(error)
+      return Promise.reject(error);
     }
-)
+  );
+  
 
 request.interceptors.request.use(
     (response) => {

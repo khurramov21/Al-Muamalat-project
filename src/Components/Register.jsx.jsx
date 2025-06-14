@@ -18,7 +18,7 @@ export default function Register() {
     const { full_name, password, phone_number } = data;
     auth.register({ full_name, password, phone_number }, () => {
       toast.success("Register successfully");
-      navigate("/login");
+      navigate("/profile");
     }, []);
   };
 

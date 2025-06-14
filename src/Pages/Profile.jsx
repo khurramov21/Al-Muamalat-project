@@ -8,8 +8,10 @@ import request from '../Services/Request'
 const Profile = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ['userData'],
-    queryFn: () => request.get('https://api.al-muamalat.uz/api/user/me'),
+    queryFn: () => request.get('/user/me').then(res => res.data.data)
   })
+console.log(data)
+  const user = data;
 
   return (
     <>
@@ -36,8 +38,10 @@ const Profile = () => {
               <div className='flex flex-col sm:flex-row sm:items-center gap-[16px] sm:gap-[24px]'>
                 <img src={ProfileImg} alt="profile-img" />
                 <div>
-                  <h1 className='font-semibold text-[24px] sm:text-[32px] text-[#000]'>{data?.data?.data?.full_name}</h1>
-                  <p className='font-semibold text-[14px] sm:text-[16px] text-[#000]'>+ {data?.data?.data?.phone_number}</p>
+                  <h1 className='font-semibold text-[24px] sm:text-[32px] text-[#000]'>{user?.full_name}</h1>
+                  <p className='font-semibold text-[14px] sm:text-[16px] text-[#000]'>+ {user?.phone_number}</p>
+                  <p className='font-semibold text-[14px] sm:text-[16px] text-[#000]'>{user?.address}</p>
+                  <p className='font-semibold text-[14px] sm:text-[16px] text-[#000]'>{user?.birthday}</p>
                 </div>
               </div>
 
@@ -58,6 +62,7 @@ const Profile = () => {
                     type='text'
                     className='w-full h-[46px] bg-[#F7F7F7] rounded-[7px] pt-[16px] p-[20px]'
                     placeholder='Your Full Name'
+                    defaultValue={user?.full_name || ''}
                   />
                 </div>
                 <div className='flex flex-col gap-[10px] w-full lg:w-[537px]'>
@@ -66,6 +71,7 @@ const Profile = () => {
                     type='number'
                     className='w-full h-[46px] bg-[#F7F7F7] rounded-[7px] pt-[16px] p-[20px]'
                     placeholder='Your Phone Number'
+                    defaultValue={user?.phone_number || ''}
                   />
                 </div>
               </div>
@@ -77,6 +83,7 @@ const Profile = () => {
                     type='email'
                     className='w-full h-[46px] bg-[#F7F7F7] rounded-[7px] pt-[16px] p-[20px]'
                     placeholder='Enter Your Address'
+                    defaultValue={user?.address || ''}
                   />
                 </div>
                 <div className='flex flex-col gap-[10px] w-full lg:w-[537px]'>
@@ -85,6 +92,7 @@ const Profile = () => {
                     type='date'
                     className='w-full h-[46px] bg-[#F7F7F7] rounded-[7px] pt-[16px] p-[20px]'
                     placeholder='Enter Your Birthday'
+                    defaultValue={user?.birthday || ''}
                   />
                 </div>
               </div>

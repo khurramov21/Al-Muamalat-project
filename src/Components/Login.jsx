@@ -21,7 +21,7 @@ const Login = () => {
       const {password, phone_number } = data;
       auth.login({ password, phone_number }, () => {
         toast.success("Login successfully");
-        navigate("/home");
+        navigate("/profile");
       }, []);
     };
   // const { register, handleSubmit } = useForm()

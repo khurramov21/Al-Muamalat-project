@@ -1,5 +1,4 @@
 import React from 'react'
-import WorkShop from '../Components/WorkShop'
 import Footer from '../Components/Footer'
 
 const Contact = () => {
@@ -81,10 +80,6 @@ const Contact = () => {
         </div>
       </div>
     </div>
-
-    <div className='w-full max-w-[1440px] mx-auto sm:mt-[100px] lg:mt-[150px]'>
-        <WorkShop />
-      </div>
 
       <div className='w-full max-w-[1440px] mx-auto sm:mt-[100px] lg:mt-[150px] max-md:mt-[66px]'>
         <Footer />
